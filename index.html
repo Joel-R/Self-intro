@@ -24,14 +24,72 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section><h1>HOTEL CHEVALIER</h1></section>
-				<section><h2>A WES ANDERSON PRODUCTION</h2></section>
-				<section><h2>Starring</h2>
-						<p class="fragment">Natalie Portman</p><br>
-						<p><span class="fragment">Jason Schwartzmann</span></p>
+				<section>
+					<h1>A SELF INTRODUCTION</h1>
+					<h2 class = "fragment fade-up">A pleasure meeting everyone</h2>
 				</section>
-				<section data-background="lib/hotel.jpg"></section>
-				<section><h1>THE END</h1></section>
+				<section>
+				<section>
+					<h2 class="fragment fade-up" >I am Joel Rogers</h2>
+					<p class="fragment fade-up" >Given Name - Joel</p>
+					<p class="fragment fade-up" >Family Name - Rogers</p>
+					<p class="fragment fade-up" >Not the kind of guy who jumps at an oppurtunity of self-introduction</p>
+				</section>
+				<section>
+					<h3> More about Myself </h3>
+					<p class="fragment fade-up" >I am a third year student at IIT-M</p>
+					<p class="fragment fade-up" >Majoring in Electrical Engineering</p>
+				</section>
+				<section>
+					<h3> Even more about Myself </h3>
+					<p class="fragment fade-up" > Cats over Dogs </p>
+					<p class="fragment fade-up" > Sunsets over Sunrises </p>
+					<p class="fragment fade-up" > Honored to visit Japan birthplace of a couple of my favorite authors - Haruki Murakami and Yukio Mishima</p>
+				</section>
+				</section>
+				<section>
+					<h2> PROJECTS </h2>	
+				</section>
+				<section data-background-image = "lib/cv.jpg">
+					<section>
+					<h2 > Dabbled in Computer Vision </h2>
+					</section>
+					<section>
+						<p class="fragment fade-up" style="color: red"> A member of the CV group in my first year</p>
+						<p class="fragment fade-up" style="color: red"> Tinkered around in object and feature detection </p>
+						<p class="fragment fade-up" style="color: red"> Made an app that detects various facial features and adds snapchat like filters over the video feed </p>
+					</section>				
+				</section>
+				<section>
+					<section data-background-image = "lib/satellite.jpg">
+					<h2  style="color: red"> Hoping to launch a Satellite </h2>	
+					</section>
+					<section >
+						<p class="fragment fade-up" id = "change2-3"> Joint initiative with the Indian Space Program with a budget of over 40 million yen</p>
+						<p class="fragment fade-up" id = "change2-1" style="color: red"> Detects High Energy particles in the upper reaches of the atmosphere </p>
+						<p class="fragment fade-up" id = "change2-2" style="color: red"> Currently overseeing multiple teams as part of the project </p>
+					</section>
+					<section>
+					<h2> Listening to the skies </h2>
+					 	<p class="fragment fade-up"> Set up software and hardware chains for the Ground Station </p>
+						<p class="fragment fade-up"> Spent a summer trying to decode messages sent by amateur satellites </p>
+						<p class="fragment fade-up"> Coincidentally Cubesat 11 was the first decoded satellite</p>
+					</section>
+					<section data-background-image = "lib/mbed.jpg">
+					<h2> Coding Microcontrollers </h2>
+						<p class="fragment fade-up" style="color: red"> Coded the control and data management system of the satellite </p>
+						<p class="fragment fade-up" style="color: red"> Extensively worked in device communication and resource management</p>
+					</section>
+					<section >
+					<h2> WebApp for the Satellite </h2>
+						<p class="fragment fade-up"> Designed a web app with Django </p>
+						<p class="fragment fade-up" id = "change3-1" style="color: red"> Information accessible around the world for the progress of science !</p>
+						<p class="fragment fade-up" id = "change3-2" style="color: red"> Waiting for final testing at government facilities after which we hope to lauch it in a couple of months </p>
+					</section>
+				</section>	
+				<section>
+					<h1> Words of Conclusion </h1>
+				</section>
 			</div>
 		</div>
 
@@ -49,6 +107,29 @@
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
+			});
+			Reveal.addEventListener('fragmentshown', function(event){
+				if (event.fragment.id == 'change2-1')
+				{
+					document.getElementById('change2-3').style = "color : red";
+					Reveal.getCurrentSlide().dataset.background = "lib/sat2.jpg";
+					Reveal.sync();
+				}
+			   else if (event.fragment.id == 'change2-2')
+				{
+					Reveal.getCurrentSlide().dataset.background = "lib/sat3.jpg";
+					Reveal.sync();
+				}
+				else if (event.fragment.id == 'change3-1')
+				{
+					Reveal.getCurrentSlide().dataset.background = "lib/a1.png";
+					Reveal.sync();
+				}
+				else if (event.fragment.id == 'change3-2')
+				{
+					Reveal.getCurrentSlide().dataset.background = "lib/a2.png";
+					Reveal.sync();
+				}
 			});
 		</script>
 	</body>
